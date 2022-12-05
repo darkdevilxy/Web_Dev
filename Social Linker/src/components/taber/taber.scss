@@ -1,0 +1,15 @@
+.taber{ 
+    display: flex;
+}
+.tabs{
+    &:hover{
+        cursor: pointer;
+        background-color: rgb(212, 206, 206);
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+    }
+    overflow-y: scroll;
+    padding: 1%;
+    width: 20%;
+    text-align: center;
+}
