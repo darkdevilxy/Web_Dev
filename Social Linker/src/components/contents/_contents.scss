@@ -1,0 +1,11 @@
+@use  './../../global_components/color_palatte'  as  color_palatte;
+
+.contents{
+    background-color: color_palatte.color(primary, 1);
+    height: 100%;
+    display: grid;
+    grid-template-rows:repeat(auto-fill);
+    gap: 1%;
+    border: 1px solid blue;
+    padding: 10%;
+}

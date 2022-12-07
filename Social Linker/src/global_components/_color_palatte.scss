@@ -1,0 +1,36 @@
+@function color($color, $alpha: 1) {
+  @if $color == "primary" {
+    @return rgb(154, 140, 152, $alpha);
+  } @else if $color == "primary_dark" {
+    @return rgb(74, 78, 105, $alpha);
+  } @else if $color == "primary_light" {
+    @return rgb(201, 173, 167, $alpha);
+  } @else if $color == "secondary_dark" {
+    @return rgb(34, 34, 59, $alpha);
+  } @else if $color == "secondary_light" {
+    @return rgb(242, 233, 228, $alpha);
+  }
+}
+
+@mixin t_secondary {
+  color: color(secondary_light, 1);
+}
+@mixin t_primary {
+  color: color(primary_light, 1);
+  font-weight: 500;
+}
+@mixin bg_primary_dark($alpha: 1) {
+  background-color: color(primary_dark, $alpha);
+}
+@mixin bg_primary_light($alpha: 1) {
+  background-color: color(primary_light, $alpha);
+}
+@mixin bg_primary($alpha: 1) {
+  background-color: color(primary, $alpha);
+}
+@mixin bg_secondary_dark($alpha: 1) {
+  background-color: color(secondary_dark, $alpha);
+}
+@mixin bg_secondary_light($alpha: 1) {
+  background-color: color(secondary_light, $alpha);
+}

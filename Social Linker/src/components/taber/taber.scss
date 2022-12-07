@@ -1,15 +1,18 @@
+@use './../../global_components/color_palatte'  as  color_palatte;
+
 .taber{ 
     display: flex;
 }
 .tabs{
     &:hover{
         cursor: pointer;
-        background-color: rgb(212, 206, 206);
-        border-top-left-radius: 0.5rem;
-        border-top-right-radius: 0.5rem;
+        background-color: color_palatte.color(primary, 1);
+        // border-top-left-radius: 0.5rem;
+        // border-top-right-radius: 0.5rem;
     }
     overflow-y: scroll;
     padding: 1%;
     width: 20%;
     text-align: center;
+    background-color: color_palatte.color(primary_light, 1);
 }

@@ -1,8 +1,33 @@
+@use "./../../global_components/color_palatte" as color_palette;
+
+@mixin secondary_text_color {
+  color: color_palette.color(secondary_light, 1);
+}
+@mixin primary_text_color {
+  color: color_palette.color(primary_light, 1);
+  font-weight: 500;
+}
+@mixin primary_background_color_dark($alpha: 1) {
+  background-color: color_palette.color(primary_dark, $alpha);
+}
+@mixin primary_background_color_light($alpha: 1) {
+  background-color: color_palette.color(primary_light, $alpha);
+}
+@mixin primary_background_color($alpha: 1) {
+  background-color: color_palette.color(primary, $alpha);
+}
+@mixin secondary_background_color_dark($alpha: 1) {
+  background-color: color_palette.color(secondary_dark, $alpha);
+}
+@mixin secondary_background_color_light($alpha: 1) {
+  background-color: color_palette.color(secondary_light, $alpha);
+}
+
 .ProfileView {
   position: relative;
   display: flex;
   flex-flow: column;
-  background: linear-gradient(180deg, #d6cfcf 0%, #aea9a9 100%);
+  @include primary_background_color_dark(0.8);
 
   .profile_details {
     &::before {
@@ -12,13 +37,16 @@
       left: 0;
       width: 100%;
       height: 50%;
-      background: linear-gradient(rgba(50, 38, 38, 0.7), rgba(97, 84, 84, 0.7));
-      z-index: -1;
+      background: linear-gradient(
+        color_palette.color(primary_dark, 1),
+        color_palette.color(primary_light, 1)
+      );
+      z-index: -2;
     }
 
     position: relative;
-    z-index: 2;
     display: flex;
+    z-index: 2;
     justify-content: center;
     align-items: baseline;
     gap: 10%;
@@ -28,20 +56,29 @@
       max-width: min(5rem, 20%);
       object-fit: cover;
       border-radius: 50%;
-      outline: 1px solid red;
+      outline: 1px solid color_palette.color(secondary_dark, 1);
     }
 
     .profile_name {
-        font-family: "Tangerine", cursive;
-        font-weight: 500;
-        font-size: 1.3rem;
+      font-family: "Tangerine", cursive;
+      font-weight: 500;
+      font-size: 1.3rem;
+      @include primary_text_color;
     }
 
-    .subscribe{
-        border: none;
-        padding: 0.4rem;
-        border-radius: 1em;
-        box-shadow: 0 0 0.2rem 0 #000000;
+    .subscribe {
+      border: none;
+      padding: 0.4rem;
+      border-radius: 1em;
+      box-shadow: 0 0 0.2rem 0 #000000;
+      transition: all 0.2s ease-in-out;
+      @include secondary_text_color();
+      @include secondary_background_color_dark(1);
+
+      &:hover {
+        @include secondary_background_color_dark(0.5);
+        scale: 1.1;
+      }
     }
   }
 
@@ -49,10 +86,11 @@
     p {
       font-family: "Roboto", sans-serif;
       color: rgb(17, 16, 16);
-      padding: 0 0 0 3%;
+      padding: 0 2% 2% 3%;
       font-size: 0.9rem;
       margin-top: auto;
       text-align: center;
+      @include secondary_text_color;
     }
   }
 }

@@ -1,0 +1,12 @@
+.link_container {
+    border: 1px solid green;
+    display: flex;
+  .link_image {
+    max-width: min(5rem, 20%);
+    aspect-ratio: 1/1;
+  }
+  .link {
+    .link_text {
+    }
+  }
+}
