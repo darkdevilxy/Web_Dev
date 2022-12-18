@@ -1,11 +1,32 @@
-@use  './../../global_components/color_palatte'  as  color_palatte;
+@use "./../../global_components/color_palate" as color_palate;
 
-.contents{
-    background-color: color_palatte.color(primary, 1);
-    height: 100%;
-    display: grid;
-    grid-template-rows:repeat(auto-fill);
-    gap: 1%;
-    border: 1px solid blue;
-    padding: 10%;
+.contents {
+  background-color: color_palate.color(primary, 1);
+  display: grid;
+  gap: 1rem;
+  padding: 2rem;
+  overflow: hidden;
+}
+@media (min-width: 35rem) {
+  .contents {
+    padding: 5rem 3rem 5rem 3rem;
+  }
+}
+
+.taber {
+  display: flex;
+  overflow-x: auto;
+}
+.tabs {
+  &:hover {
+    cursor: pointer;
+    background-color: color_palate.color(primary, 1);
+    // border-top-left-radius: 0.5rem;
+    // border-top-right-radius: 0.5rem;
+  }
+  padding: 2%;
+  border: none;
+  width: 20%;
+  text-align: center;
+  background-color: color_palate.color(primary_light, 1);
 }

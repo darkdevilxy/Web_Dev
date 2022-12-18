@@ -1,4 +1,4 @@
-@use "./../../global_components/color_palatte" as color_palette;
+@use "./../../global_components/color_palate" as color_palette;
 
 @mixin secondary_text_color {
   color: color_palette.color(secondary_light, 1);

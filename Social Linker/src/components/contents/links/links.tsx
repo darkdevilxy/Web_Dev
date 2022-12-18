@@ -4,16 +4,18 @@ interface Props {
   icon: string;
   text: string;
   link: string;
-  key: number;
 }
 
-export default function Links({ icon, text, link, key }: Props) {
+export default function Links({ icon, text, link }: Props) {
+  const url = new URL("/icons/" + icon + ".svg", import.meta.url).href;
+  console.log(url);
+
   return (
-    <div className="link_container">
-      <img src={icon} alt="" className="link_image" />
-      <a className="link" href={link}>
+    <a className="link_container" href={link}>
+      <img src={url} alt="" className="link_image" />
+      <div className="links">
         <div className="link_text">{text}</div>
-      </a>
-    </div>
+      </div>
+    </a>
   );
 }
