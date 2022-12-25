@@ -56,13 +56,12 @@
       max-width: min(5rem, 20%);
       object-fit: cover;
       border-radius: 50%;
-      outline: 1px solid color_palette.color(secondary_dark, 1);
     }
 
     .profile_name {
-      font-family: "Tangerine", cursive;
+      font-family: "Sevillana";
       font-weight: 500;
-      font-size: 1.3rem;
+      font-size: 1.5rem;
       @include primary_text_color;
     }
 

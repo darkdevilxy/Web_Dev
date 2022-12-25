@@ -1,30 +1,31 @@
 import "./_contents.scss";
 import Links from "./links/links";
 
-import { useEffect, useState } from "react";
 import { Link, Route, Routes } from "react-router-dom";
 
-import link_data from "/src/data/links.json";
+const link_data = await fetch("/src/data/links.json").then((res) => res.json());
+
+interface LinkData {
+  id: number;
+  Icon: string;
+  Title: string;
+  URL: string;
+}
 
 export default function Contents() {
   return (
     <div className="wrapper_class">
-      <div className="taber">
-        <button className="tabs">
-          <Link to="/links">Links</Link>
-        </button>
-        <button className="tabs">
-          <Link to={"/contents"}>Contents</Link>
-        </button>
-        <button className="tabs">
-          <Link to={"/projects"}>Projects</Link>
-        </button>
+      <div className="tab_container">
+        <Link className="tabs" to="/links">
+          Links
+        </Link>
+        <Link className="tabs" to={"/about"}>
+          About Me
+        </Link>
       </div>
       <div className="contents">
         <Routes>
           <Route path="/links" element={<LinksContainer />} />
-          {/* <Route path="/contents" element={<ContentsContainer />} />
-          <Route path="/projects" element={<ProjectsContainer />} /> */}
         </Routes>
       </div>
     </div>
@@ -34,8 +35,7 @@ export default function Contents() {
 function LinksContainer() {
   return (
     <>
-      {link_data.map((data: link_data) => {
-        console.log(data);
+      {link_data.map((data: LinkData) => {
         return (
           <Links
             key={data.id}

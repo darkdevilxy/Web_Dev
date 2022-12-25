@@ -8,6 +8,15 @@
 
   background-color: color_palate.color(secondary_dark, 0.5);
   border-radius: 1em;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: color_palate.color(secondary_dark, 1);
+    transform: scale(1.05);
+    .link_image {
+      animation: link_image_bounce_with_shadow 0.5s ease-in-out;
+    }
+  }
 
   .link_image {
     width: min(4rem, 30%);
@@ -16,6 +25,26 @@
   .link {
     height: fit-content;
     .link_text {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: color_palate.color(secondary_light, 1);
+      text-decoration: none;
+      transition: all 0.2s ease-in-out;
+      &:hover {
+        color: color_palate.color(secondary_light, 0.5);
+        text-decoration: underline;
+      }
     }
+  }
+}
+@keyframes link_image_bounce_with_shadow {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-0.5rem);
+  }
+  100% {
+    transform: translateY(0);
   }
 }

@@ -1,12 +1,12 @@
 import "./profile_view.scss";
-import profile_image from "./../../assets/bibek.png";
+import profile_image from "/src/assets/Logo (3).svg";
 
 export default function ProfileView() {
   return (
     <div className="ProfileView">
       <div className="profile_details">
         <img src={profile_image} alt="" className="profile_image" />
-        <h3 className="profile_name">@darkdevilxy</h3>
+        <h2 className="profile_name">@darkdevilxy</h2>
         <button className="subscribe">Subscribe</button>
       </div>
       <div className="profile_description">

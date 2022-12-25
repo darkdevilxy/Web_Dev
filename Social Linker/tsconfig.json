@@ -11,11 +11,11 @@
     "forceConsistentCasingInFileNames": true,
     "module": "ESNext",
     "moduleResolution": "Node",
-    "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "baseUrl": "."
+    "baseUrl": ".",
+    "resolveJsonModule": true,
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

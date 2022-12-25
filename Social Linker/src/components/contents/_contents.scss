@@ -13,20 +13,24 @@
   }
 }
 
-.taber {
-  display: flex;
-  overflow-x: auto;
-}
-.tabs {
-  &:hover {
-    cursor: pointer;
-    background-color: color_palate.color(primary, 1);
-    // border-top-left-radius: 0.5rem;
-    // border-top-right-radius: 0.5rem;
+.tab_container {
+  display: grid;
+  grid-template-columns: auto auto;
+
+  .tabs {
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      background-color: color_palate.color(primary, 1);
+      // border-top-left-radius: 0.5rem;
+      // border-top-right-radius: 0.5rem;
+    }
+    padding: 0.5rem;
+    border: none;
+    text-align: center;
+    background-color: color_palate.color(primary_light, 1);
   }
-  padding: 2%;
-  border: none;
-  width: 20%;
-  text-align: center;
-  background-color: color_palate.color(primary_light, 1);
 }
+// * {
+//   outline: 1px solid red;
+// }
